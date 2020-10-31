@@ -1,0 +1,59 @@
+DOUBLE EXPERIMENT:
+Step:1 Value of the second system, second equation:2.00020000000000000 Deviation:0.0001000000000000000000000000
+Step:2 Value of the second system, second equation:2.00015000000000010 Deviation:0.0000500000000000000020000000
+Step:3 Value of the second system, second equation:2.00012500000000020 Deviation:0.0000250000000000000010000000
+Step:4 Value of the second system, second equation:2.00011250000000020 Deviation:0.0000125000000000000010000000
+Step:5 Value of the second system, second equation:2.00010625000000040 Deviation:0.0000062500000000000003000000
+Step:6 Value of the second system, second equation:2.00010312500000030 Deviation:0.0000031250000000000001000000
+Step:7 Value of the second system, second equation:2.00010156250000030 Deviation:0.0000015625000000000001000000
+Step:8 Value of the second system, second equation:2.00010078125000000 Deviation:0.0000007812500000000000400000
+Step:9 Value of the second system, second equation:2.00010039062500010 Deviation:0.0000003906250000000000200000
+Step:10 Value of the second system, second equation:2.00010019531250020 Deviation:0.0000001953125000000000100000
+Step:11 Value of the second system, second equation:2.00010009765625040 Deviation:0.0000000976562500000000050000
+Step:12 Value of the second system, second equation:2.00010004882812530 Deviation:0.0000000488281250000000020000
+Step:13 Value of the second system, second equation:2.00010002441406250 Deviation:0.0000000244140625000000010000
+Step:14 Value of the second system, second equation:2.00010001220703160 Deviation:0.0000000122070312500000010000
+Step:15 Value of the second system, second equation:2.00010000610351570 Deviation:0.0000000061035156250000003000
+Step:16 Value of the second system, second equation:2.00010000305175820 Deviation:0.0000000030517578125000001000
+Step:17 Value of the second system, second equation:2.00010000152587920 Deviation:0.0000000015258789062500001000
+Step:18 Value of the second system, second equation:2.00010000076293970 Deviation:0.0000000007629394531250000400
+Step:19 Value of the second system, second equation:2.00010000038146970 Deviation:0.0000000003814697265625000200
+Step:20 Value of the second system, second equation:2.00010000019073520 Deviation:0.0000000001907348632812500100
+Step:21 Value of the second system, second equation:2.00010000009536750 Deviation:0.0000000000953674316406250050
+Step:22 Value of the second system, second equation:2.00010000004768380 Deviation:0.0000000000476837158203125020
+x2=0.99999952316073060 y2=1.000000476839269400 Distance between points on the coordinate plane:0.00000067435256186212
+x1=1.0 y1=1.0
+
+DOUBLE вывод: нам потребовалось уменьшить величину отклонения (diviation) в 2^21 раза, чтобы получить расстояние
+между точками равное 0.00000067435256186212, которое меньше чем 10^(-6). Первоначально решение второй системы уравнений было
+x2=0,y2=2. И с каждым последующим шагом в эксперименте точка ответов второй системы уравнений приближалась к точке ответов первой системы уравнений,
+на координатной плоскости, к x1=1, y1=1. Заключительными ответами во второй системе уравнений стали x2=0.99999952316073060 y2=1.000000476839269400.
+
+```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+FLOAT EXPERIMENT:
+Step:1 Value of the second system, second equation:2.00020003318786620 Deviation:0.0000999999974737875160000
+Step:2 Value of the second system, second equation:2.00014996528625490 Deviation:0.0000499999987368937580000
+Step:3 Value of the second system, second equation:2.00012493133544920 Deviation:0.0000249999993684468790000
+Step:4 Value of the second system, second equation:2.00011253356933590 Deviation:0.0000124999996842234400000
+Step:5 Value of the second system, second equation:2.00010609626770020 Deviation:0.0000062499998421117198000
+Step:6 Value of the second system, second equation:2.00010299682617190 Deviation:0.0000031249999210558599000
+Step:7 Value of the second system, second equation:2.00010156631469730 Deviation:0.0000015624999605279299000
+Step:8 Value of the second system, second equation:2.00010061264038090 Deviation:0.0000007812499802639649700
+Step:9 Value of the second system, second equation:2.00010037422180180 Deviation:0.0000003906249901319824900
+Step:10 Value of the second system, second equation:2.00010013580322270 Deviation:0.0000001953124950659912400
+Step:11 Value of the second system, second equation:2.00009989738464360 Deviation:0.0000000976562475329956210
+With a further decrease in the deviation, the value of the second system, second equation will always be the same.
+x2=1.00053787231445310 y2=0.999462127685546880 Distance between points on the coordinate plane:0.00076066632192461545
+x1=1.0 y1=1.0
+
+FLOAT вывод: у нас получилось уменьшить величину отклонения (diviation) всего лишь в 2^10 раз, что не привело нас к желаемому результату, 
+так как расстояние между точками на координатной плоскости равно 0.00076066632192461545, что больше чем 10^(-6). При дальнейших уменьшениях отклонения (diviation)
+значение во второй системе, втором уравнении будет всегда одинаковым, а именно 2.00009989738464360, а это значит решение данной задачи
+реализованной в цикле может продолжаться бесконечно, если не ввести дополнительное, прерывающее цикл условие. Происходит это из-за "недостаточной точности" типа данных float.
+
+``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+Общий вывод: Эксперимент с типом данных double прошел успешно, а реализовывать решение данной задачи с типом данных float некорректно потому, что
+точность double составляет приблизительно 15 значащих цифр после запятой (1/2^53~1,11*10^(-16), 52 бита мантиссы + 1 неявный бит). А точность float
+составляет приблизительно 7 значащих цифр после запятой (1/2^24~5,96*10^(-8), 23 бита мантиссы + 1 неявный бит). Эта потеря точности может привести к накоплению 
+ошибок усечений (округлений, накопление погрешностей) при повторных вычислениях. Что мы и можем увидеть, если сравним величины отклонения (diviation) или значения второй системы,
+второго уравнения на каждом шаге в DOUBLE EXPERIMENT c FLOAT EXPERIMENT.
